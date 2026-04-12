@@ -1,8 +1,35 @@
 <odoo>
 
+    
+    <record id='clinic_patient_list_view' model='ir.ui.view'>
+        <field name='name'>Patient List View</field>
+        <field name='model'>clinic.patient</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='ref'/>
+                <field name='name'/>
+                <field name='date_of_birth'/>
+                <field name='gender'/>
 
-
-    <record name='action_clinic_patient' model='ir.actions'>
-        
+            </tree>
+        </field>
     </record>
+
+
+    <!-- <record id='clinic_patient_form_view' model='ir.ui.view'> 
+
+    </record> -->
+ 
+    <record id='action_clinic_patient' model='ir.actions.act_window'>
+        <field name='name'>Patients</field>
+        <field name='res_model'>clinic.patient</field>
+    </record>
+
+    <menuitem
+    id= "clinic_patient_menu"
+    name= "Patients"
+    parent = "clinic_root_menu"
+    action= 'action_clinic_patient'
+    />
+    
 </odoo>

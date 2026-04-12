@@ -4,10 +4,4 @@
     name= "Clinic"
     />
 
-    <menuitem
-    id= "clinic_patient_menu"
-    name= "Patient"
-    parent = "clinic_root_menu"
-
-    />
 </odoo>
