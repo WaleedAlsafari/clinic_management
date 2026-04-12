@@ -1,0 +1,8 @@
+<odoo>
+
+
+
+    <record name='action_clinic_patient' model='ir.actions'>
+        
+    </record>
+</odoo>
