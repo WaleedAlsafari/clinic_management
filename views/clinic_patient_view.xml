@@ -15,10 +15,58 @@
         </field>
     </record>
 
+    <record id='clinic_patient_search_view' model='ir.ui.view'>
+        <field name='name'> Patient Search View</field>
+        <field name='model'>clinic.patient</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='ref'/>
+                <field name='name'/>
+                
+                 <filter name='weight_over_100kg' string='Weight over 100kg' domain="[('weight','>',100.00)]"/>
 
-    <!-- <record id='clinic_patient_form_view' model='ir.ui.view'> 
+                 <filter name='group_by_gender' string='Group By Gender' context='{"group_by" : "gender"}'/>
+            </search>
+        </field>
+    </record>
 
-    </record> -->
+    <record id='clinic_patient_form_view' model='ir.ui.view'> 
+        <field name='name'> Patient Form View</field>
+        <field name='model'>clinic.patient</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <label for='name'/>
+                    <h3><field name='name' placeholder="Sultan Ahemd"/></h3>
+                    <group>
+                        <group string='General Info'>
+                            <field name='phone' placeholder="0541327080"/>
+                            <field name='nid' placeholder="0123456789"/>
+                            <field name='date_of_birth'/>
+                            <field name='emergency_contact' placeholder='0539483274'/>
+                        </group>
+                        <group string='Insurance'>
+                            <field name='insurance_no' placeholder='3232242'/>
+                        </group>
+                        <group string='Medical Info'>
+                            <field name='age'/>
+                            <field name='weight'/>
+                            <field name='hight'/>
+                            <field name='gender'/>
+                            <field name='blood_type'/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class='oe_chatter'>
+                <field name='message_follower_ids'/>
+                <field name='activity_ids'/>
+                <field name='message_ids'/>
+                </div>
+            </form>
+
+        </field>
+
+    </record>
  
     <record id='action_clinic_patient' model='ir.actions.act_window'>
         <field name='name'>Patients</field>
