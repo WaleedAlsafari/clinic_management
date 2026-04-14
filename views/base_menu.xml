@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem
+    id= "clinic_root_menu"
+    name= "Clinic"
+    />
+
+</odoo>
