@@ -1,0 +1,74 @@
+<odoo>
+
+    <record id='clinic_doctor_list_view' model='ir.ui.view'>
+        <field name='name'>Doctor List View</field>
+        <field name='model'>clinic.doctor</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='ref'/>
+                <field name='name'/>
+                <field name='specialization'/>
+                <field name='active'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='clinic_doctor_search_view' model='ir.ui.view'>
+        <field name='name'>Doctor Search View</field>
+        <field name='model'>clinic.doctor</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='ref'/>
+                <field name='name'/>
+
+                <filter name='group_by' string='Group by Specialization' context='{"group_by" : "specialization"}'/>
+               
+            </search>
+        </field>
+    </record>
+
+    <record id='clinic_doctor_form_view' model='ir.ui.view'>
+        <field name='name'> Doctor Form View</field>
+        <field name='model'>clinic.doctor</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <label for='ref'/>
+                    <h1><field name='ref'/></h1>
+                    <label for='name'/>
+                    <h3><field name='name' placeholder='Ahmed Ali'/></h3>
+
+                    <group>
+                        <group string='General Info'>
+                            <field name='phone' placeholder='05493828'/>
+                            <field name='email' placeholder='ahmed@example.com'/>
+                        </group>
+                        <group string='Medical Employee Info'>
+                            <field name='specialization' placeholder='Dentist'/>
+                            <field name='license_no' placeholder='12345678'/>
+                        </group>
+                        <field name='active' invisible='1'/>
+                    </group>
+                </sheet>
+                <div class='oe_chatter'>
+                <field name='message_follower_ids'/>
+                <field name='activity_ids'/>
+                <field name='message_ids'/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_clinic_doctor' model='ir.actions.act_window'>
+        <field name='name'>Doctors</field>
+        <field name='res_model'>clinic.doctor</field>
+    </record>
+
+    <menuitem
+        id='clinic_doctor_menu'
+        name='Doctors'
+        parent='clinic_root_menu'
+        action='action_clinic_doctor'
+    />
+</odoo>

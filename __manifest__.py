@@ -16,8 +16,10 @@
     "data" : [
         "security/ir.model.access.csv",
         "data/clinic_patient_seq.xml",
+        "data/clinic_doctor_seq.xml",
         "views/base_menu.xml",
         "views/clinic_patient_view.xml",
+        "views/clinic_doctor_view.xml",
     ],
 
     "application" : True
