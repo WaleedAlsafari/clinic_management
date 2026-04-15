@@ -20,6 +20,7 @@
         "views/base_menu.xml",
         "views/clinic_patient_view.xml",
         "views/clinic_doctor_view.xml",
+        "views/clinic_appointment_view.xml"
     ],
 
     "application" : True

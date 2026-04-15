@@ -1,0 +1,46 @@
+<odoo>
+
+
+
+    <record id='clinic_appointment_list_view' model='ir.ui.view'>
+        <field name='name'>Appointment List View</field>
+        <field name='model'>clinic.appointment</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='appointment_no'/>
+                <field name='patient_id'/>
+                <field name='doctor_id'/>
+                <field name='appointment_date'/>
+                <field name='state'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='clinic_appointment_search_view' model='ir.ui.view'>
+        <field name='name'>Appointment Search View</field>
+        <field name='model'>clinic.appointment</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='appointment_no'/>
+                <field name='patient_id'/>
+                <field name='doctor_id'/>
+
+                <filter name='group_by_doctor' string='Group By Doctor' context='{"group_by" : "doctor_id"}'/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='action_clinic_appointment' model='ir.actions.act_window'>
+        <field name='name'>Appointments</field>
+        <field name='res_model'>clinic.appointment</field>
+    </record>
+
+
+    <menuitem
+    id='clinic_appointment_menu'
+    name='Appointments'
+    parent='clinic_root_menu'
+    action='action_clinic_appointment'
+    />
+</odoo>
