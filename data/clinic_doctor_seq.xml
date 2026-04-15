@@ -1,0 +1,8 @@
+<odoo>
+    <record id='clinic_doctor_sequence' model='ir.sequence'>
+        <field name='name'>clinic_doctor_sequence</field>
+        <field name='code'>clinic_doctor_seq</field>
+        <field name='prefix'>DR</field>
+        <field name='padding'>3</field>
+    </record>
+</odoo>
