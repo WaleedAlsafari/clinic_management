@@ -17,9 +17,17 @@
         "security/ir.model.access.csv",
         "data/clinic_patient_seq.xml",
         "data/clinic_doctor_seq.xml",
+<<<<<<< HEAD
         "views/base_menu.xml",
         "views/clinic_patient_view.xml",
         "views/clinic_doctor_view.xml",
+=======
+        "data/clinic_appointment_seq.xml",
+        "views/base_menu.xml",
+        "views/clinic_patient_view.xml",
+        "views/clinic_doctor_view.xml",
+        "views/clinic_appointment_view.xml"
+>>>>>>> dev
     ],
 
     "application" : True
