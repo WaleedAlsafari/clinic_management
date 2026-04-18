@@ -5,7 +5,9 @@ from odoo.exceptions import ValidationError
 
 class ClinicAppointment(models.Model):
     _name = 'clinic.appointment'
+    _description = 'Appointment'
     _rec_name = 'appointment_no'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     appointment_no = fields.Char(default="New", readonly=1, string='Appointment Number')
     patient_id = fields.Many2one('clinic.patient', required=1)
@@ -48,6 +50,12 @@ class ClinicAppointment(models.Model):
             match = rec.search([('appointment_date','=',rec.appointment_date), ('appointment_hour','=', rec.appointment_hour), ('doctor_id', '=', rec.doctor_id.id), ('id' , '!=', rec.id)])
             if match:
                 raise ValidationError("This time slot is booked, please use a different one")
+            
+    @api.model_create_multi
+    def create(self,vals):
+        rec = super(ClinicAppointment,self).create(vals)
+        rec.appointment_no = self.env['ir.sequence'].next_by_code('clinic_appointment_seq')
+        return rec
 
 
 
