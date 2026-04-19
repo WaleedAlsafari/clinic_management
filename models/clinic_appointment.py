@@ -1,6 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
-
+from datetime import time
 
 
 class ClinicAppointment(models.Model):
@@ -54,8 +54,58 @@ class ClinicAppointment(models.Model):
     @api.model_create_multi
     def create(self,vals):
         rec = super(ClinicAppointment,self).create(vals)
-        rec.appointment_no = self.env['ir.sequence'].next_by_code('clinic_appointment_seq')
+        rec.mark_as_draft()
         return rec
+
+    def unlink(self):
+        for rec in self:
+            if rec.state not in ('draft', 'cancelled'):
+                raise ValidationError("You can't delete this appointment unless it's draft or cancelled")
+        return super().unlink()
+
+
+    def mark_as_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
+    def mark_as_confirmed(self):
+        for rec in self:
+            rec.state = 'confirmed'
+            rec.appointment_no = self.env['ir.sequence'].next_by_code('clinic_appointment_seq')
+
+    def mark_as_in_progress(self):
+        for rec in self:
+            rec.state = 'in_progress'
+
+    def mark_as_done(self):
+        for rec in self:
+            rec.state = 'done'
+
+    def mark_as_cancelled(self):
+        for rec in self:
+            rec.state = 'cancelled'
+
+    @api.constrains('appointment_date')
+    def _validate_selected_appointment_date(self):
+        for rec in self:
+            if rec.appointment_date < fields.Date.today():
+                raise ValidationError("Invalid appointment date")
+
+    @api.constrains('appointment_hour')
+    def _validate_selected_appointment_time(self):
+        
+        now_time = fields.Datetime.context_timestamp(self, fields.Datetime.now()).time()
+        for rec in self:
+            if rec.appointment_date == fields.Date.today():
+                h, m = rec.appointment_hour.split(':')
+                rec_time = time(int(h), int(m))
+                if rec_time < now_time:
+                    raise ValidationError("Invalid appointment time")
+
+
+
+
+    
 
 
 

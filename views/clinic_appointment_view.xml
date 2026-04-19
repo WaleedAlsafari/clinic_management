@@ -44,6 +44,39 @@
         <field name='model'>clinic.appointment</field>
         <field name='arch' type='xml'>
             <form>
+                <header>
+                    <button
+                        name='mark_as_draft'
+                        type='object'
+                        string='Reset to Draft'
+                        class='btn-primary'
+                        invisible='state != "confirmed"'
+                    />
+                    <button
+                        name='mark_as_confirmed'
+                        type='object'
+                        string='Confirm'
+                        class='btn-primary'
+                        invisible='state != "draft"'
+                    />
+                    <button
+                        name='mark_as_in_progress'
+                        type='object'
+                        string='Start Visit'
+                        class='btn-primary'
+                        invisible='state != "confirmed"'
+                    />
+                    <button
+                        name='mark_as_done'
+                        type='object'
+                        string='Done'
+                        class='btn-primary'
+                        invisible='state != "in_progress"'
+                    />
+
+
+                    <field name='state' widget='statusbar' />
+                </header>
                 <sheet>
                     <h5>
                         <label for='appointment_no' />
@@ -53,28 +86,38 @@
                     </h3>
                     <group>
                         <group>
-                            <field name='patient_id' />
-                            <field name='doctor_id' />
+                            <field name='patient_id' readonly='state != "draft" and appointment_no != "New" or state == "cancelled"'/>
+                            <field name='doctor_id' readonly='state != "draft" and appointment_no != "New"'/>
                         </group>
                         <group>
-                            <field name='appointment_date' />
-                            <field name='appointment_hour' />
+                            <field name='appointment_date' readonly='state != "draft" and appointment_no != "New" or state == "cancelled"'/>
+                            <field name='appointment_hour' readonly='state != "draft" and appointment_no != "New" or state == "cancelled"'/>
                         </group>
                         <group>
-                            <field name='reason' />
+                            <field name='reason' readonly='state != "draft" and appointment_no != "New" or state == "cancelled"'/>
                         </group>
                         <group>
-                            
-                            <field name='notes' />
+
+                            <field name='notes' readonly='state == "cancelled"'/>
                         </group>
                     </group>
                 </sheet>
-                 <div class='oe_chatter'>
-                <field name='message_follower_ids'/>
-                <field name='activity_ids'/>
-                <field name='message_ids'/>
+                <div class='oe_chatter'>
+                    <field name='message_follower_ids' />
+                    <field name='activity_ids' />
+                    <field name='message_ids' />
                 </div>
             </form>
+        </field>
+    </record>
+
+    <record id='server_action_clinic_appointment' model='ir.actions.server'>
+        <field name='name'>Cancel Appointment</field>
+        <field name='model_id' ref='model_clinic_appointment'/>
+        <field name='binding_model_id' ref='model_clinic_appointment'/>
+        <field name='state'>code</field>
+        <field name='code'>
+            action = records.mark_as_cancelled()
         </field>
     </record>
 
