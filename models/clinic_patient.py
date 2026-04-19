@@ -6,6 +6,10 @@ class ClinicPatient(models.Model):
     _description = 'Patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    
+>>>>>>> dev
 =======
     
 >>>>>>> dev
