@@ -41,7 +41,7 @@ class ClinicAppointment(models.Model):
     ]
     )
     notes = fields.Text()
-    # visit_id = fields.Many2one('clinic.visit')
+    visit_id = fields.Many2one('clinic.visit')
     invoice_id = fields.Many2one('account.move')
 
     @api.constrains('appointment_date', 'appointment_hour')
@@ -76,6 +76,7 @@ class ClinicAppointment(models.Model):
     def mark_as_in_progress(self):
         for rec in self:
             rec.state = 'in_progress'
+            rec.visit_id = self.env['clinic.visit'].create({"appointment_id" : rec.id})
 
     def mark_as_done(self):
         for rec in self:
