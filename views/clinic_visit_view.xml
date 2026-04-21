@@ -30,36 +30,37 @@
         <field name='model'>clinic.visit</field>
         <field name='arch' type='xml'>
             <form>
-               <header> <button
-                name='mark_as_draft'
-                type='object'
-                string='Reset to Draft'
-                class='btn-primary'
-                invisible='state != "in_consultation"'
-                />
-                <button
-                name='mark_as_in_consultation'
-                type='object'
-                string='Start Consultation'
-                class='btn-primary'
-                invisible='state != "draft"'
-                />
-                <button
-                name='mark_as_done'
-                type='object'
-                string='Mark as Done'
-                class='btn-primary'
-                invisible='state != "in_consultation"'
-                />
-                <button
-                name='mark_as_invoiced'
-                type='object'
-                string='Create Invoice'
-                class='btn-primary'
-                invisible='state != "done"'
-                />
-                <field name='state' widget='statusbar'/>
-            </header>
+                <header>
+                    <button
+                        name='mark_as_draft'
+                        type='object'
+                        string='Reset to Draft'
+                        class='btn-primary'
+                        invisible='state != "in_consultation"'
+                    />
+                    <button
+                        name='mark_as_in_consultation'
+                        type='object'
+                        string='Start Consultation'
+                        class='btn-primary'
+                        invisible='state != "draft"'
+                    />
+                    <button
+                        name='mark_as_done'
+                        type='object'
+                        string='Mark as Done'
+                        class='btn-primary'
+                        invisible='state != "in_consultation"'
+                    />
+                    <button
+                        name='mark_as_invoiced'
+                        type='object'
+                        string='Create Invoice'
+                        class='btn-primary'
+                        invisible='state != "done"'
+                    />
+                    <field name='state' widget='statusbar' />
+                </header>
                 <sheet>
                     <label for='visit_no' />
                     <h3>
@@ -80,7 +81,25 @@
                             <field name='diagnosis' />
                             <field name='note' />
                         </group>
+                         <field name='currency_id' invisible='1'/>
                     </group>
+                    <notebook>
+                        <page string='prescriptions'>
+                            <field name='prescription_line_ids'>
+                                <tree editable='True'>
+                                    <field name='product_id' />
+                                    <field name='dosage' />
+                                    <field name='frequency' />
+                                    <field name='duration' />
+                                    <field name='instructions' />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div class='oe_subtotal_footer oe_left'>
+                        <h3><field name='amount_total' widget='monetary'
+                            options="{'currency_field': 'currency_id'}" /></h3>
+                    </div>
                 </sheet>
                 <div class='oe_chatter'>
                     <field name='message_follower_ids' />
