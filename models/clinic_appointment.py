@@ -1,7 +1,11 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+from datetime import time
+>>>>>>> dev
 =======
 from datetime import time
 >>>>>>> dev
@@ -45,7 +49,11 @@ class ClinicAppointment(models.Model):
     ]
     )
     notes = fields.Text()
+<<<<<<< HEAD
     # visit_id = fields.Many2one('clinic.visit')
+=======
+    visit_id = fields.Many2one('clinic.visit')
+>>>>>>> dev
     invoice_id = fields.Many2one('account.move')
 
     @api.constrains('appointment_date', 'appointment_hour')
@@ -59,10 +67,13 @@ class ClinicAppointment(models.Model):
     def create(self,vals):
         rec = super(ClinicAppointment,self).create(vals)
 <<<<<<< HEAD
+<<<<<<< HEAD
         rec.appointment_no = self.env['ir.sequence'].next_by_code('clinic_appointment_seq')
         return rec
 
 =======
+=======
+>>>>>>> dev
         rec.mark_as_draft()
         return rec
 
@@ -85,6 +96,10 @@ class ClinicAppointment(models.Model):
     def mark_as_in_progress(self):
         for rec in self:
             rec.state = 'in_progress'
+<<<<<<< HEAD
+=======
+            rec.visit_id = self.env['clinic.visit'].create({"appointment_id" : rec.id})
+>>>>>>> dev
 
     def mark_as_done(self):
         for rec in self:
@@ -116,6 +131,9 @@ class ClinicAppointment(models.Model):
 
     
 
+<<<<<<< HEAD
+>>>>>>> dev
+=======
 >>>>>>> dev
 
 

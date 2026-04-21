@@ -1,0 +1,105 @@
+<odoo>
+
+    <record id='clinic_visit_list_view' model='ir.ui.view'>
+        <field name='name'>Visit List View</field>
+        <field name='model'>clinic.visit</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='visit_no' />
+                <field name='patient_id' />
+                <field name='doctor_id' />
+                <field name='state' />
+            </tree>
+        </field>
+    </record>
+
+    <record id='clinic_visit_search_view' model='ir.ui.view'>
+        <field name='name'>Visit Search View</field>
+        <field name='model'>clinic.visit</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='visit_no' />
+                <field name='patient_id' />
+                <field name='doctor_id' />
+            </search>
+        </field>
+    </record>
+
+    <record id='clinic_visit_form_view' model='ir.ui.view'>
+        <field name='name'>Visit Form View</field>
+        <field name='model'>clinic.visit</field>
+        <field name='arch' type='xml'>
+            <form>
+               <header> <button
+                name='mark_as_draft'
+                type='object'
+                string='Reset to Draft'
+                class='btn-primary'
+                invisible='state != "in_consultation"'
+                />
+                <button
+                name='mark_as_in_consultation'
+                type='object'
+                string='Start Consultation'
+                class='btn-primary'
+                invisible='state != "draft"'
+                />
+                <button
+                name='mark_as_done'
+                type='object'
+                string='Mark as Done'
+                class='btn-primary'
+                invisible='state != "in_consultation"'
+                />
+                <button
+                name='mark_as_invoiced'
+                type='object'
+                string='Create Invoice'
+                class='btn-primary'
+                invisible='state != "done"'
+                />
+                <field name='state' widget='statusbar'/>
+            </header>
+                <sheet>
+                    <label for='visit_no' />
+                    <h3>
+                        <field name='visit_no' />
+                    </h3>
+                    <group>
+                        <group string='General Info'>
+                            <field name='appointment_id' />
+                            <field name='patient_id' />
+                            <field name='doctor_id' />
+                        </group>
+                        <group string='Date &amp; Time'>
+                            <field name='visit_date' />
+                            <field name='visit_hour' />
+                        </group>
+                        <group string='Visit Info'>
+                            <field name='complaint' />
+                            <field name='diagnosis' />
+                            <field name='note' />
+                        </group>
+                    </group>
+                </sheet>
+                <div class='oe_chatter'>
+                    <field name='message_follower_ids' />
+                    <field name='activity_ids' />
+                    <field name='message_ids' />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='action_clinic_visit' model='ir.actions.act_window'>
+        <field name='name'>Visits</field>
+        <field name='res_model'>clinic.visit</field>
+    </record>
+
+    <menuitem
+        id='clinic_visit_menu'
+        name='Visits'
+        parent='clinic_root_menu'
+        action='action_clinic_visit'
+    />
+</odoo>

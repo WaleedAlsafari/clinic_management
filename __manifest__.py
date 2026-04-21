@@ -19,20 +19,29 @@
         "data/clinic_doctor_seq.xml",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "views/base_menu.xml",
         "views/clinic_patient_view.xml",
         "views/clinic_doctor_view.xml",
 =======
 =======
+>>>>>>> dev
+=======
+        "data/clinic_visit_seq.xml",
 >>>>>>> dev
         "data/clinic_appointment_seq.xml",
         "views/base_menu.xml",
         "views/clinic_patient_view.xml",
         "views/clinic_doctor_view.xml",
+<<<<<<< HEAD
         "views/clinic_appointment_view.xml"
 <<<<<<< HEAD
 >>>>>>> dev
 =======
+>>>>>>> dev
+=======
+        "views/clinic_appointment_view.xml",
+        "views/clinic_visit_view.xml"
 >>>>>>> dev
     ],
 
