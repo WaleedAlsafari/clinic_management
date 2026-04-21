@@ -44,11 +44,6 @@
         <field name='model'>clinic.appointment</field>
         <field name='arch' type='xml'>
             <form>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> dev
                 <header>
                     <button
                         name='mark_as_draft'
@@ -82,10 +77,6 @@
 
                     <field name='state' widget='statusbar' />
                 </header>
-<<<<<<< HEAD
->>>>>>> dev
-=======
->>>>>>> dev
                 <sheet>
                     <h5>
                         <label for='appointment_no' />
@@ -95,31 +86,6 @@
                     </h3>
                     <group>
                         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <field name='patient_id' />
-                            <field name='doctor_id' />
-                        </group>
-                        <group>
-                            <field name='appointment_date' />
-                            <field name='appointment_hour' />
-                        </group>
-                        <group>
-                            <field name='reason' />
-                        </group>
-                        <group>
-                            
-                            <field name='notes' />
-                        </group>
-                    </group>
-                </sheet>
-                 <div class='oe_chatter'>
-                <field name='message_follower_ids'/>
-                <field name='activity_ids'/>
-                <field name='message_ids'/>
-=======
-=======
->>>>>>> dev
                             <field name='patient_id' readonly='state != "draft" and appointment_no != "New" or state == "cancelled"'/>
                             <field name='doctor_id' readonly='state != "draft" and appointment_no != "New"'/>
                         </group>
@@ -140,20 +106,11 @@
                     <field name='message_follower_ids' />
                     <field name='activity_ids' />
                     <field name='message_ids' />
-<<<<<<< HEAD
->>>>>>> dev
-=======
->>>>>>> dev
                 </div>
             </form>
         </field>
     </record>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> dev
     <record id='server_action_clinic_appointment' model='ir.actions.server'>
         <field name='name'>Cancel Appointment</field>
         <field name='model_id' ref='model_clinic_appointment'/>
@@ -164,10 +121,7 @@
         </field>
     </record>
 
-<<<<<<< HEAD
->>>>>>> dev
-=======
->>>>>>> dev
+
     <record id='action_clinic_appointment' model='ir.actions.act_window'>
         <field name='name'>Appointments</field>
         <field name='res_model'>clinic.appointment</field>

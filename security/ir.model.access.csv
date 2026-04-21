@@ -1,16 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_clinic_patient,access_clinic_patient,model_clinic_patient,,1,1,1,1
 access_clinic_doctor,access_clinic_doctor,model_clinic_doctor,,1,1,1,1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-access_clinic_appointment,access_clinic_appointment,model_clinic_appointment,,1,1,1,1
->>>>>>> dev
-=======
-access_clinic_appointment,access_clinic_appointment,model_clinic_appointment,,1,1,1,1
->>>>>>> dev
-=======
 access_clinic_appointment,access_clinic_appointment,model_clinic_appointment,,1,1,1,1
 access_clinic_visit,access_clinic_visit,model_clinic_visit,,1,1,1,1
->>>>>>> dev
+

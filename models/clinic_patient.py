@@ -5,18 +5,7 @@ class ClinicPatient(models.Model):
     _name = 'clinic.patient'
     _description = 'Patient'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> dev
-=======
-    
->>>>>>> dev
-=======
-    
->>>>>>> dev
+
 
     ref = fields.Char(default='New', readonly=True)
     partner_id = fields.Many2one('res.partner')

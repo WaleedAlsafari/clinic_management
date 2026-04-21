@@ -5,18 +5,6 @@ class ClinicDoctor(models.Model):
     _name = 'clinic.doctor'
     _description = 'Doctor'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> dev
-=======
-    
->>>>>>> dev
-=======
-    
->>>>>>> dev
 
     ref = fields.Char(default='New', readonly=True)
     name = fields.Char(related='partner_id.name', store=True, readonly=False, requried=1)
