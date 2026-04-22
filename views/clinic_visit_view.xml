@@ -81,10 +81,10 @@
                             <field name='diagnosis' />
                             <field name='note' />
                         </group>
-                         <field name='currency_id' invisible='1'/>
+                      
                     </group>
                     <notebook>
-                        <page string='prescriptions'>
+                        <page string='Prescriptions'>
                             <field name='prescription_line_ids'>
                                 <tree editable='True'>
                                     <field name='product_id' />
@@ -95,11 +95,15 @@
                                 </tree>
                             </field>
                         </page>
+                        <page string='Services'>
+                            <field name='service_line_ids'>
+                                <tree editable='True'>
+                                    <field name='product_id'/>
+                                    <field name='quantity'/>
+                                </tree>
+                            </field>
+                        </page>
                     </notebook>
-                    <div class='oe_subtotal_footer oe_left'>
-                        <h3><field name='amount_total' widget='monetary'
-                            options="{'currency_field': 'currency_id'}" /></h3>
-                    </div>
                 </sheet>
                 <div class='oe_chatter'>
                     <field name='message_follower_ids' />

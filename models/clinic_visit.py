@@ -25,10 +25,8 @@ class ClinicVisit(models.Model):
         ('cancelled','Cancelled'),
     ])
     prescription_line_ids = fields.One2many('clinic.prescription.line', 'visit_id')
-    # invoice_id = fields.Many2one()
-    # service_product_id = fields.Many2one()
-    amount_total = fields.Monetary(compute='_compute_total',string='Total', currency_field='currency_id')
-    currency_id = fields.Many2one('res.currency', default=lambda self: self.env.company.currency_id)
+    invoice_id = fields.Many2one('account.move')
+    service_line_ids = fields.One2many(comodel_name='clinic.service.line', string='Service', inverse_name='visit_id')
 
     def mark_as_draft(self):
         for rec in self:
@@ -50,10 +48,12 @@ class ClinicVisit(models.Model):
     def mark_as_invoiced(self):
         for rec in self:
             rec.state='invoiced'
+            rec.invoice_id = rec.env['account.move'].create({})
 
     def mark_as_cancelled(self):
         for rec in self:
             rec.state='cancelled'
+            rec.inv
 
     @api._model_create_multi
     def create(self,vals):
@@ -61,21 +61,27 @@ class ClinicVisit(models.Model):
         rec.mark_as_draft()
         return rec
     
-    @api.depends('prescription_line_ids.price')
-    def _compute_total(self):
-        for rec in self:
-            rec.amount_total = sum(rec.prescription_line_ids.mapped('price'))
 
 class ClinicPrescriptionLine(models.Model):
     _name='clinic.prescription.line'
 
     visit_id = fields.Many2one('clinic.visit')
     product_id = fields.Many2one('product.product')
+    quantity  = fields.Integer(required=1, default=1)
     dosage = fields.Char()
     frequency = fields.Char()
     duration = fields.Char()
     instructions = fields.Text()
-    price = fields.Float(related='product_id.list_price')
+
+class ClinicServiceLine(models.Model):
+    _name='clinic.service.line'
+
+    visit_id = fields.Many2one('clinic.visit')
+    product_id = fields.Many2one('product.product')
+    quantity = fields.Integer(required=1, default=1)
+    
+    
+
 
 
 
