@@ -88,6 +88,7 @@
                             <field name='prescription_line_ids'>
                                 <tree editable='True'>
                                     <field name='product_id' />
+                                    <field name='quantity' />
                                     <field name='dosage' />
                                     <field name='frequency' />
                                     <field name='duration' />
