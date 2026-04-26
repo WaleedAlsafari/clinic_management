@@ -64,7 +64,7 @@ class ClinicVisit(models.Model):
 
         lines = []
 
-        for line in self.prescription_line_ids:
+        for line in self.prescription_line_ids, self.service_line_ids:
             lines.append((0,0,{
                 'product_id' : line.product_id.id,
                 'name' : line.product_id.name,
@@ -93,6 +93,12 @@ class ClinicVisit(models.Model):
         rec = super(ClinicVisit,self).create(vals)
         rec.mark_as_draft()
         return rec
+    
+    def write(self,vals):
+        if self.state == 'invoiced':
+            raise ValidationError("You cannot edit this record because it's invoiced")
+        
+        return super(ClinicVisit,self).write(vals);
 
 
     @api.constrains('service_line_ids')
@@ -100,6 +106,7 @@ class ClinicVisit(models.Model):
         for rec in self:
             if not rec.service_line_ids:
                 raise ValidationError("Error: at least one service must be selected")
+            
     
 
 class ClinicPrescriptionLine(models.Model):

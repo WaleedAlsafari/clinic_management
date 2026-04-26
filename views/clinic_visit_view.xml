@@ -81,13 +81,12 @@
                             <field name='diagnosis' />
                             <field name='note' />
                         </group>
-                      
                     </group>
                     <notebook>
                         <page string='Prescriptions'>
                             <field name='prescription_line_ids'>
                                 <tree editable='True'>
-                                    <field name='product_id' />
+                                    <field name='product_id' domain="[('categ_id', '=', 4)]"/>
                                     <field name='quantity' />
                                     <field name='dosage' />
                                     <field name='frequency' />
@@ -99,7 +98,7 @@
                         <page string='Services'>
                             <field name='service_line_ids'>
                                 <tree editable='True'>
-                                    <field name='product_id'/>
+                                    <field name='product_id' domain="[('categ_id','=', 5)]"/>
                                     <field name='quantity'/>
                                 </tree>
                             </field>

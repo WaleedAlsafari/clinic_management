@@ -43,6 +43,9 @@ class ClinicAppointment(models.Model):
     notes = fields.Text()
     visit_id = fields.Many2one('clinic.visit')
     invoice_id = fields.Many2one('account.move')
+    is_follow_up = fields.Boolean(default=False, readonly=1)
+    parent_id = fields.Many2one('clinic.appointment')
+    child_ids = fields.One2many('clinic.appointment', 'parent_id')
 
     @api.constrains('appointment_date', 'appointment_hour')
     def _check_available_time_slot(self):
@@ -103,6 +106,10 @@ class ClinicAppointment(models.Model):
                 if rec_time < now_time:
                     raise ValidationError("Invalid appointment time")
 
+    def create_follow_up_appointment(self):
+        for rec in self:
+            if rec.state == 'done':
+                child_appointment = rec.create({})
 
 
 
