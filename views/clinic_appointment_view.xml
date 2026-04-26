@@ -121,7 +121,6 @@
         </field>
     </record>
 
-
     <record id='action_clinic_appointment' model='ir.actions.act_window'>
         <field name='name'>Appointments</field>
         <field name='res_model'>clinic.appointment</field>

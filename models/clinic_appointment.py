@@ -3,7 +3,6 @@ from odoo.exceptions import ValidationError
 from datetime import time
 
 
-
 class ClinicAppointment(models.Model):
     _name = 'clinic.appointment'
     _description = 'Appointment'
@@ -42,7 +41,6 @@ class ClinicAppointment(models.Model):
     ]
     )
     notes = fields.Text()
-    # visit_id = fields.Many2one('clinic.visit')
     visit_id = fields.Many2one('clinic.visit')
     invoice_id = fields.Many2one('account.move')
 
@@ -56,9 +54,6 @@ class ClinicAppointment(models.Model):
     @api.model_create_multi
     def create(self,vals):
         rec = super(ClinicAppointment,self).create(vals)
-
-        rec.appointment_no = self.env['ir.sequence'].next_by_code('clinic_appointment_seq')
-        return rec
         rec.mark_as_draft()
         return rec
 
@@ -81,8 +76,8 @@ class ClinicAppointment(models.Model):
     def mark_as_in_progress(self):
         for rec in self:
             rec.state = 'in_progress'
-
             rec.visit_id = self.env['clinic.visit'].create({"appointment_id" : rec.id})
+
     def mark_as_done(self):
         for rec in self:
             rec.state = 'done'
@@ -112,6 +107,9 @@ class ClinicAppointment(models.Model):
 
 
     
+
+
+
 
 
 
