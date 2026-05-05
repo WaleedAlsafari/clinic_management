@@ -1,6 +1,8 @@
+import pytz
+
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
-from datetime import time
+from datetime import time, datetime, timedelta
 
 
 class ClinicAppointment(models.Model):
@@ -31,6 +33,8 @@ class ClinicAppointment(models.Model):
     ('16:00', '16:00'),
     ('16:30', '16:30'),
 ], string='Appointment Time', required=1)
+    calendar_start = fields.Datetime(compute='compute_calendar', string="Start", store=1)
+    calendar_end = fields.Datetime(compute='compute_calendar', string="End", store=1)
     reason = fields.Text()
     state = fields.Selection([
         ('draft','Draft'),
@@ -46,7 +50,7 @@ class ClinicAppointment(models.Model):
     is_follow_up = fields.Boolean(default=False, readonly=1)
     parent_id = fields.Many2one('clinic.appointment')
     child_ids = fields.One2many('clinic.appointment', 'parent_id')
-
+    
     @api.constrains('appointment_date', 'appointment_hour')
     def _check_available_time_slot(self):
         for rec in self:
@@ -65,7 +69,6 @@ class ClinicAppointment(models.Model):
             if rec.state not in ('draft', 'cancelled'):
                 raise ValidationError("You can't delete this appointment unless it's draft or cancelled")
         return super().unlink()
-
 
     def mark_as_draft(self):
         for rec in self:
@@ -106,10 +109,31 @@ class ClinicAppointment(models.Model):
                 if rec_time < now_time:
                     raise ValidationError("Invalid appointment time")
 
-    def create_follow_up_appointment(self):
+    def show_create_follow_up_appointment(self):
+        if self.state == 'done':
+            action = self.env['ir.actions.actions']._for_xml_id('clinic_management.action_create_follow_up_wizard')
+            action['context'] = {'default_appointment_id' : self.id}
+            return action
+        else:
+            raise ValidationError("Error, can't create follow up appointment if it's not done")
+    @api.depends('appointment_date', 'appointment_hour')
+    def compute_calendar(self):
+        tz = pytz.timezone('Asia/Riyadh')
+
         for rec in self:
-            if rec.state == 'done':
-                child_appointment = rec.create({})
+            if rec.appointment_date and rec.appointment_hour:
+
+                dt_str = f"{rec.appointment_date} {rec.appointment_hour}"
+
+                local_dt = fields.Datetime.to_datetime(dt_str)
+
+                local_dt = tz.localize(local_dt)
+
+                utc_dt = local_dt.astimezone(pytz.utc).replace(tzinfo=None)
+
+                rec.calendar_start = utc_dt
+                rec.calendar_end = utc_dt + timedelta(minutes=30)
+                    
 
 
 
