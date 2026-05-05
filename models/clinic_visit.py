@@ -23,7 +23,7 @@ class ClinicVisit(models.Model):
         ('done','Done'),
         ('invoiced', 'Invoiced'),
         ('cancelled','Cancelled'),
-    ])
+    ],group_expand='_expand_states')
     prescription_line_ids = fields.One2many('clinic.prescription.line', 'visit_id')
     invoice_id = fields.Many2one('account.move')
     service_line_ids = fields.One2many(comodel_name='clinic.service.line', string='Service', inverse_name='visit_id', required=1)
@@ -106,6 +106,10 @@ class ClinicVisit(models.Model):
         for rec in self:
             if not rec.service_line_ids:
                 raise ValidationError("Error: at least one service must be selected")
+            
+    @api.model
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
             
     
 

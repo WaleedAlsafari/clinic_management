@@ -114,9 +114,65 @@
         </field>
     </record>
 
+       <record id="clinic_visit_kanban_view" model="ir.ui.view">
+        <field name="name">clinic.visit.kanban.view</field>
+        <field name="model">clinic.visit</field>
+
+        <field name="arch" type="xml">
+            <kanban
+                default_group_by="state"
+                create='0'
+                group_create="0"
+                groups_draggable="0"
+                records_draggable="0">
+
+                <field name="visit_no" />
+                <field name="patient_id" />
+                <field name="doctor_id" />
+                <field name="visit_date" />
+                <field name="visit_hour" />
+
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div class="oe_kanban_global_click o_kanban_record">
+
+                            <div class="o_kanban_details">
+
+                                <strong>
+                                    <field name="visit_no" />
+                                </strong>
+
+                                <div>
+                                    <field name="patient_id" />
+                                </div>
+
+                                <div> Dr, <field name="doctor_id" />
+                                </div>
+
+                                <div>
+                                    <field name="visit_date" />
+                                </div>
+
+                                <div>
+                                    <field name="visit_hour" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </t>
+                </templates>
+
+            </kanban>
+        </field>
+    </record>
+
     <record id='action_clinic_visit' model='ir.actions.act_window'>
         <field name='name'>Visits</field>
         <field name='res_model'>clinic.visit</field>
+        <field name='view_mode'>tree,kanban,form</field>
     </record>
 
     <menuitem
