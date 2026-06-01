@@ -14,6 +14,7 @@
     This is a clinic management app for small to mid-sized clinic
 """,
     "data" : [
+        "security/security.xml",
         "security/ir.model.access.csv",
         "data/clinic_patient_seq.xml",
         "data/clinic_doctor_seq.xml",
