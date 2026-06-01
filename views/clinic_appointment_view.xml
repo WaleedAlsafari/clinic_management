@@ -148,7 +148,12 @@
         <field name="model">clinic.appointment</field>
 
         <field name="arch" type="xml">
-            <kanban default_group_by="state" create='0'>
+            <kanban
+                default_group_by="state"
+                create='0'
+                group_create="0"
+                groups_draggable="0"
+                records_draggable="0">
 
                 <field name="appointment_no" />
                 <field name="patient_id" />
@@ -171,8 +176,7 @@
                                     <field name="patient_id" />
                                 </div>
 
-                                <div>
-                                 Dr:   <field name="doctor_id" />
+                                <div> Dr, <field name="doctor_id" />
                                 </div>
 
                                 <div>
@@ -208,7 +212,7 @@
     <record id='action_clinic_appointment' model='ir.actions.act_window'>
         <field name='name'>Appointments</field>
         <field name='res_model'>clinic.appointment</field>
-        <field name='view_mode'>calendar,kanban,tree,form</field>
+        <field name='view_mode'>tree,calendar,kanban,form</field>
     </record>
 
     <menuitem

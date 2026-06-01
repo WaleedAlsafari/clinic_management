@@ -42,7 +42,8 @@ class ClinicAppointment(models.Model):
         ('in_progress','In Progress'),
         ('done','Done'),
         ('cancelled','Cancelled')
-    ]
+    ],
+    group_expand='_expand_states'
     )
     notes = fields.Text()
     visit_id = fields.Many2one('clinic.visit')
@@ -133,7 +134,10 @@ class ClinicAppointment(models.Model):
 
                 rec.calendar_start = utc_dt
                 rec.calendar_end = utc_dt + timedelta(minutes=30)
-                    
+    
+    @api.model
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
 
 
 
