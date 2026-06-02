@@ -58,6 +58,7 @@
                         string='Create Invoice'
                         class='btn-primary'
                         invisible='state != "done"'
+                        groups='clinic_management.clinic_admin_group, clinic_management.clinic_receptionist_group, clinic_management.clinic_accountant_group'
                     />
                     <field name='state' widget='statusbar' />
                 </header>
@@ -166,6 +167,16 @@
                 </templates>
 
             </kanban>
+        </field>
+    </record>
+    
+    <record id='server_action_clinic_visit' model='ir.actions.server'>
+        <field name='name'>Cancel Visit</field>
+        <field name='model_id' ref='model_clinic_visit'/>
+        <field name='binding_model_id' ref='model_clinic_visit'/>
+        <field name='state'>code</field>
+        <field name='code'>
+            action = records.mark_as_cancelled()
         </field>
     </record>
 

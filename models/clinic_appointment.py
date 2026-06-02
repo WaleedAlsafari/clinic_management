@@ -64,6 +64,15 @@ class ClinicAppointment(models.Model):
         rec = super(ClinicAppointment,self).create(vals)
         rec.mark_as_draft()
         return rec
+    
+    # @api.model
+    # def search(self, domain, offset=0, limit=None, order=None, access_rights_uid=None):
+    #     records = super(ClinicAppointment,self).search(domain, offset=0, limit=None, order=None)
+    #     print("within serarch method")
+    #     for rec in records:
+    #         print(rec.doctor_id.user_id)
+    #         print(self.env.user.id)
+    #     return records
 
     def unlink(self):
         for rec in self:
@@ -83,7 +92,7 @@ class ClinicAppointment(models.Model):
     def mark_as_in_progress(self):
         for rec in self:
             rec.state = 'in_progress'
-            rec.visit_id = self.env['clinic.visit'].create({"appointment_id" : rec.id})
+            rec.visit_id = self.env['clinic.visit'].sudo().create({"appointment_id" : rec.id})
 
     def mark_as_done(self):
         for rec in self:

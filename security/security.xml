@@ -24,10 +24,26 @@
         <field name='category_id' ref='clinic_management.clinic_management_category'/>
     </record>
 
-    <record id='clinic_management_record_rule_by_doctor' model='ir.rule'>
-        <field name='name'>clinic.management.record.rule.by.doctor</field>
-        <field name='model_id' ref='clinic_management.clinic_appointment'/>
-        <field name='domain_force'>[('','=',user.id)]</field>
+    <record id='clinic_doctor_appointment_rule' model='ir.rule'>
+        <field name='name'>linic.doctor.appointment.rule</field>
+        <field name='model_id' ref='clinic_management.model_clinic_appointment'/>
+        <field name="groups" eval="[(4, ref('clinic_management.clinic_doctor_group'))]"/>
+        <field name='domain_force'>[('doctor_id.user_id','=',user.id)]</field>
+        <field name='perm_read' eval='True'/>
+        <field name='perm_write' eval='True'/>
+        <field name='perm_create' eval='False'/>
+        <field name='perm_unlink' eval='False'/>
+    </record>
+
+    <record id='clinic_doctor_visit_rule' model='ir.rule'>
+        <field name='name'>linic.doctor.visit.rule</field>
+        <field name='model_id' ref='clinic_management.model_clinic_visit'/>
+        <field name="groups" eval="[(4, ref('clinic_management.clinic_doctor_group'))]"/>
+        <field name='domain_force'>[('doctor_id.user_id','=',user.id)]</field>
+        <field name='perm_read' eval='True'/>
+        <field name='perm_write' eval='True'/>
+        <field name='perm_create' eval='False'/>
+        <field name='perm_unlink' eval='False'/>
     </record>
 
 </odoo>
