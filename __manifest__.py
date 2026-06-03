@@ -25,7 +25,8 @@
         "views/clinic_doctor_view.xml",
         "views/clinic_appointment_view.xml",
         "views/clinic_visit_view.xml",
-        "wizard/create_follow_up_wizard.xml"
+        "wizard/create_follow_up_wizard.xml",
+        "reports/clinic_prescription_report.xml"
     ],
 
     "application" : True
