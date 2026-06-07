@@ -2,32 +2,151 @@
     <record id='clinic_prescription_report_action' model='ir.actions.report'>
         <field name='name'>Clinic Prescription Reprot Action</field>
         <field name='model'>clinic.visit</field>
-        <field name='report_type'>qweb-html</field>
+        <field name='report_type'>qweb-pdf</field>
         <field name='binding_model_id' ref='model_clinic_visit' />
         <field name='binding_type'>report</field>
         <field name='report_name'>clinic_management.prescription_report_template</field>
+            <field name="print_report_name">
+        (object.visit_no or 'Prescription')
+    </field>
     </record>
 
     <template id='prescription_report_template'>
         <t t-call='web.html_container'>
-            <t t-call='web.basic_layout'>
-                <t t-foreach='docs' t-as='rec'>
+            <t t-foreach='docs' t-as='rec'>
+                <t t-call='web.external_layout'>
                     <div class='page'>
-                        <h2>Prescription Report</h2>
-                        <div>
-                            <table style="width:100%;  border:1px solid #999;" >
-    <tr>
-        <td style="background:#d9d9d9; font-weight:bold; padding:6px;">Patient Name</td>
-        <td style="padding:6px;"><span t-field="rec.patient_id.name"/></td>
+                        <p>Date:<span t-field='rec.visit_date' /></p>
+                        <header>
+                            <h2 class="text-center">Prescription Report <span t-field='rec.visit_no'/></h2>
+                        </header>
 
-        <td style="background:#d9d9d9; font-weight:bold; padding:6px;">File No</td>
-        <td style="padding:6px; "><span t-field="rec.patient_id.ref"/></td>
+                        <div style='padding:20px;'>
+                            <table
+                                style="width:100%; border-collapse:separate; border-spacing:20px 0;">
+                                <tr>
+                                    <td style="width:65%; vertical-align:top;">
+                                        <table
+                                            style="width:100%; border:1px solid #999; border-collapse:collapse; ">
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; width:150px; white-space:nowrap; border:1px solid #999;;">
+                                                    Patient Name
+                                                </td>
+                                                <td style="padding:6px;border:1px solid #999;">
+                                                    <span t-field="rec.patient_id.name" />
+                                                </td>
+                                            </tr>
 
-        <td style="background:#d9d9d9; font-weight:bold; padding:6px;">National ID</td>
-        <td style="padding:6px;"><span t-field="rec.patient_id.nid"/></td>
-    </tr>
-</table>
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; white-space:nowrap; border:1px solid #999;">
+                                                    File No
+                                                </td>
+                                                <td style="padding:6px; border:1px solid #999;">
+                                                    <span t-field="rec.patient_id.ref" />
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; white-space:nowrap; border:1px solid #999;">
+                                                    National ID
+                                                </td>
+                                                <td style="padding:6px; border:1px solid #999;">
+                                                    <span t-field="rec.patient_id.nid" />
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+
+                                    <td style="width:35%; vertical-align:top;">
+                                        <table
+                                            style="width:100%; border:1px solid #999; border-collapse:collapse;">
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; width:120px; border:1px solid #999;">
+                                                    Age
+                                                </td>
+                                                <td style="padding:6px; border:1px solid #999;">
+                                                    <span t-field="rec.patient_id.age" />
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; border:1px solid #999;">
+                                                    Gender
+                                                </td>
+                                                <td style="padding:6px; border:1px solid #999;">
+                                                    <span t-field="rec.patient_id.gender" />
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td
+                                                    style="background:#d9d9d9; font-weight:bold; padding:6px; border:1px solid #999;">
+                                                    Doctor
+                                                </td>
+                                                <td style="padding:6px; border:1px solid #999;">
+                                                    <span t-field="rec.doctor_id" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <div style='margin:50px 20px 20px 20px; padding:5px'>
+                                <h3>Prescription Line</h3>
+                                <table class='table'>
+                                    <thead>
+                                        <tr>
+                                            <th>Medicine</th>
+
+                                            <th>Quantity</th>
+
+                                            <th>Dosage</th>
+
+                                            <th>Frequency</th>
+
+                                            <th>Duration</th>
+
+                                            <th>Instruction</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set='medicine'
+                                            t-value='rec.mapped("prescription_line_ids")' />
+                                        <tr t-foreach='medicine' t-as='med'>
+                                            <td>
+                                                <span t-field='med.product_id' />
+                                            </td>
+                                            <td>
+                                                <span t-field='med.quantity' />
+                                            </td>
+                                            <td>
+                                                <span t-field='med.dosage' />
+                                            </td>
+                                            <td>
+                                                <span t-field='med.frequency' />
+                                            </td>
+                                            <td>
+                                                <span t-field='med.duration' />
+                                            </td>
+                                            <td>
+                                                <span t-field='med.instructions' />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
+
                     </div>
                 </t>
             </t>
