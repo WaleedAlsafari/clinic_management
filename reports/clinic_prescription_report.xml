@@ -9,16 +9,16 @@
             <field name="print_report_name">
         (object.visit_no or 'Prescription')
     </field>
-    </record>
+</record>
 
     <template id='prescription_report_template'>
         <t t-call='web.html_container'>
-            <t t-foreach='docs' t-as='rec'>
+            <t t-foreach='docs' t-as='visit'>
                 <t t-call='web.external_layout'>
                     <div class='page'>
-                        <p>Date:<span t-field='rec.visit_date' /></p>
+                        <p>Date:<span t-field='visit.visit_date' /></p>
                         <header>
-                            <h2 class="text-center">Prescription Report <span t-field='rec.visit_no'/></h2>
+                            <h2 class="text-center">Prescription Report <span t-field='visit.visit_no'/></h2>
                         </header>
 
                         <div style='padding:20px;'>
@@ -34,7 +34,7 @@
                                                     Patient Name
                                                 </td>
                                                 <td style="padding:6px;border:1px solid #999;">
-                                                    <span t-field="rec.patient_id.name" />
+                                                    <span t-field="visit.patient_id.name" />
                                                 </td>
                                             </tr>
 
@@ -44,7 +44,7 @@
                                                     File No
                                                 </td>
                                                 <td style="padding:6px; border:1px solid #999;">
-                                                    <span t-field="rec.patient_id.ref" />
+                                                    <span t-field="visit.patient_id.ref" />
                                                 </td>
                                             </tr>
 
@@ -54,7 +54,7 @@
                                                     National ID
                                                 </td>
                                                 <td style="padding:6px; border:1px solid #999;">
-                                                    <span t-field="rec.patient_id.nid" />
+                                                    <span t-field="visit.patient_id.nid" />
                                                 </td>
                                             </tr>
 
@@ -71,7 +71,7 @@
                                                     Age
                                                 </td>
                                                 <td style="padding:6px; border:1px solid #999;">
-                                                    <span t-field="rec.patient_id.age" />
+                                                    <span t-field="visit.patient_id.age" />
                                                 </td>
                                             </tr>
 
@@ -81,7 +81,7 @@
                                                     Gender
                                                 </td>
                                                 <td style="padding:6px; border:1px solid #999;">
-                                                    <span t-field="rec.patient_id.gender" />
+                                                    <span t-field="visit.patient_id.gender" />
                                                 </td>
                                             </tr>
 
@@ -91,7 +91,7 @@
                                                     Doctor
                                                 </td>
                                                 <td style="padding:6px; border:1px solid #999;">
-                                                    <span t-field="rec.doctor_id" />
+                                                    <span t-field="visit.doctor_id" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -120,7 +120,7 @@
                                     </thead>
                                     <tbody>
                                         <t t-set='medicine'
-                                            t-value='rec.mapped("prescription_line_ids")' />
+                                            t-value='visit.mapped("prescription_line_ids")' />
                                         <tr t-foreach='medicine' t-as='med'>
                                             <td>
                                                 <span t-field='med.product_id' />
