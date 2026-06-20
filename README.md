@@ -131,7 +131,7 @@ clinic_management/
 
 ## 👨‍💻 Author
 
-**Waleed**
+**Waleed Alsafari**
 Odoo Developer | Python | ERP Systems
 
 ---
