@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="clinic_dashboard.Template">
+        <div class="o_clinic_dashboard p-4">
+
+            <div t-if="state.loading" class="text-center p-5">
+                <i class="fa fa-spinner fa-spin fa-2x text-muted"/>
+            </div>
+
+            <t t-else="">
+                <h2 class="mb-4">Clinic Dashboard</h2>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.total_patients"/></h3>
+                            <p class="text-muted mb-0">Patients</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.total_doctors"/></h3>
+                            <p class="text-muted mb-0">Doctors</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.today_appointments"/></h3>
+                            <p class="text-muted mb-0">Today's Appointments</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.upcoming_appointments"/></h3>
+                            <p class="text-muted mb-0">Upcoming</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.visits_in_progress"/></h3>
+                            <p class="text-muted mb-0">In Consultation</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="card p-3 text-center h-100">
+                            <h3 class="mb-0"><t t-esc="state.data.kpi.completed_visits_today"/></h3>
+                            <p class="text-muted mb-0">Completed Today</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-lg-7">
+                        <div class="card p-3 h-100">
+                            <h5 class="mb-3">Appointments — Last 7 Days</h5>
+                            <div style="height: 260px;">
+                                <canvas t-ref="trendChart"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div class="card p-3 h-100">
+                            <h5 class="mb-3">Appointment Status</h5>
+                            <table class="table table-sm mb-0">
+                                <tbody>
+                                    <t t-foreach="state.data.appointment_states" t-as="s" t-key="s.state">
+                                        <tr>
+                                            <td><t t-esc="s.label"/></td>
+                                            <td class="text-end">
+                                                <span t-attf-class="badge {{stateBadgeClass[s.state] or 'text-bg-secondary'}}">
+                                                    <t t-esc="s.count"/>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-12 col-lg-7">
+                        <div class="card p-3 h-100">
+                            <h5 class="mb-3">Today's Appointments</h5>
+                            <table class="table table-striped mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Patient</th>
+                                        <th>Doctor</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-if="!state.data.today_appointments.length">
+                                        <td colspan="4" class="text-center text-muted py-3">
+                                            No appointments scheduled for today.
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="state.data.today_appointments" t-as="a" t-key="a.id">
+                                        <tr>
+                                            <td><t t-esc="a.patient"/></td>
+                                            <td><t t-esc="a.doctor"/></td>
+                                            <td><t t-esc="a.time"/></td>
+                                            <td>
+                                                <span t-attf-class="badge {{stateBadgeClass[a.state] or 'text-bg-secondary'}}">
+                                                    <t t-esc="a.state"/>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div class="card p-3 h-100">
+                            <h5 class="mb-3">Recently Added Patients</h5>
+                            <table class="table table-sm mb-0">
+                                <tbody>
+                                    <tr t-if="!state.data.recent_patients.length">
+                                        <td class="text-center text-muted py-3">No patients yet.</td>
+                                    </tr>
+                                    <t t-foreach="state.data.recent_patients" t-as="p" t-key="p.id">
+                                        <tr>
+                                            <td><t t-esc="p.name"/></td>
+                                            <td class="text-muted"><t t-esc="p.ref"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+
+</templates>
