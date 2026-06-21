@@ -45,3 +45,5 @@ access_clinic_service_line_accountant_group_group,access_clinic_service_line_acc
 access_create_followup_admin_group,access_create_followup_admin_group,model_create_followup,clinic_admin_group,1,1,1,1
 
 access_create_followup_receptionist_group,access_create_followup_receptionist_group,model_create_followup,clinic_receptionist_group,1,1,1,1
+
+access_clinic_dashboard,access_clinic_dashboard,model_clinic_dashboard,,1,1,1,1

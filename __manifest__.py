@@ -3,6 +3,7 @@
     'version' : '1.0',
     'depends' : [
         'base',
+        'web',
         'mail',
         'account',
         'contacts',
@@ -25,9 +26,20 @@
         "views/clinic_doctor_view.xml",
         "views/clinic_appointment_view.xml",
         "views/clinic_visit_view.xml",
+        "views/clinic_dashboard.xml",
         "wizard/create_follow_up_wizard.xml",
-        "reports/clinic_prescription_report.xml"
+        "reports/clinic_prescription_report.xml",
+        "reports/clinic_patient_report.xml",
+        "reports/clinic_doctor_report.xml",
+        "reports/clinic_appointment_report.xml"
     ],
+
+    'assets' : { 
+        'web.assets_backend' : [
+            'clinic_management/static/src/dashboard/dashboard.js',
+            'clinic_management/static/src/dashboard/dashboard.xml'
+        ]
+    },
 
     "application" : True
     
