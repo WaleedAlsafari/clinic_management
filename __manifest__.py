@@ -36,6 +36,7 @@
 
     'assets' : { 
         'web.assets_backend' : [
+            'clinic_management/static/lib/chart/chart.umd.js',
             'clinic_management/static/src/dashboard/dashboard.js',
             'clinic_management/static/src/dashboard/dashboard.xml'
         ]
