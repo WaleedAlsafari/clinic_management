@@ -16,6 +16,11 @@ class ClinicDoctor(models.Model):
     specialization = fields.Char(requried=1)
     license_no = fields.Char(string='License Number', requried=1)
     active = fields.Boolean(default=True)
+    appointment_ids = fields.One2many('clinic.appointment', 'doctor_id')
+    appointment_count = fields.Integer(
+        compute='_compute_appointment_ids'
+    )
+
 
     _sql_constraints = [
         ('unique_name', 'unique(name)', 'This name exist please use a different one'),
@@ -43,6 +48,25 @@ class ClinicDoctor(models.Model):
         rec.user_id = user.id
         rec.ref = self.env['ir.sequence'].next_by_code('clinic_doctor_seq')
         return rec
+    
+    def open_related_appointment_button(self):
+        return {
+        'type': 'ir.actions.act_window',
+        'name': 'Appointments',
+        'res_model': 'clinic.appointment',
+        'view_mode': 'tree',
+        'domain' : [('id','in', self.appointment_ids.ids)],
+        'target': 'current',
+        'context' : {
+            'search_default_not_done':1
+        }
+     }
+    
+    @api.depends('appointment_ids')
+    def _compute_appointment_ids(self):
+        for rec in self:
+            rec.appointment_count = len(rec.appointment_ids.filtered(lambda a: a.state != 'done'))
+
 
     
 

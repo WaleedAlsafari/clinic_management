@@ -85,6 +85,22 @@
                     <field name='state' widget='statusbar' />
                 </header>
                 <sheet>
+                    <div name="button_box" class="oe_button_box">
+
+                        <button
+                            name="open_related_visit_button"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-calendar"
+                            invisible="not visit_id">
+
+                            <field
+                                name="visit_id"
+                                widget="statinfo"
+                                string="Visit" />
+
+                        </button>
+                    </div>
                     <h5>
                         <label for='appointment_no' />
                     </h5>

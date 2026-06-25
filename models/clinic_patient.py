@@ -32,6 +32,10 @@ class ClinicPatient(models.Model):
     ], required=True )
     insurance_no = fields.Char(required=True, string='Insurance Number')
     emergency_contact = fields.Char(required=True)
+    appointment_ids = fields.One2many('clinic.appointment', 'patient_id')
+    appointment_count = fields.Integer(
+        compute='_compute_appointment_ids'
+    )
 
     _sql_constraints = [
         ('unique_name','unique(name)','This patient name exist, please use different one'),
@@ -53,4 +57,23 @@ class ClinicPatient(models.Model):
         for rec in self:
             if rec.age <= 0:
                 raise ValidationError("Please enter a valid age")
+    
+    def open_related_appointment_button(self):
+        return {
+        'type': 'ir.actions.act_window',
+        'name': 'Appointments',
+        'res_model': 'clinic.appointment',
+        'view_mode': 'tree',
+        'domain' : [('id','in', self.appointment_ids.ids)],
+        'target': 'current',
+        'context' : {
+            'search_default_not_done':1
+        }
+     }
+    
+    @api.depends('appointment_ids')
+    def _compute_appointment_ids(self):
+        for rec in self:
+            rec.appointment_count = len(rec.appointment_ids.filtered(lambda a: a.state != 'done'))
+
     
