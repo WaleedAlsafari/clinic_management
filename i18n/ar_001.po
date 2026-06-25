@@ -1,0 +1,1380 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* clinic_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-25 11:11+0000\n"
+"PO-Revision-Date: 2026-06-25 11:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clinic_management
+#: model:ir.actions.report,print_report_name:clinic_management.appointment_report_action
+msgid ""
+"\n"
+"        ('Appointment Report - %s' % object.appointment_no)\n"
+"    "
+msgstr ""
+"\n"
+"        ('تقرير الموعد - %s' % object.appointment_no)\n"
+"    "
+
+#. module: clinic_management
+#: model:ir.actions.report,print_report_name:clinic_management.action_doctor_report
+msgid ""
+"\n"
+"        (object.ref or 'Doctor File')\n"
+"    "
+msgstr ""
+"\n"
+"        (object.ref or 'ملف الطبيب')\n"
+"    "
+
+#. module: clinic_management
+#: model:ir.actions.report,print_report_name:clinic_management.action_patient_report
+msgid ""
+"\n"
+"        (object.ref or 'Patient File')\n"
+"    "
+msgstr ""
+"\n"
+"        (object.ref or 'ملف المريض')\n"
+"    "
+
+#. module: clinic_management
+#: model:ir.actions.report,print_report_name:clinic_management.clinic_prescription_report_action
+msgid ""
+"\n"
+"        (object.visit_no or 'Prescription')\n"
+"    "
+msgstr ""
+"\n"
+"        (object.visit_no or 'الوصفة الطبية')\n"
+"    "
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "0123456789"
+msgstr "0123456789"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "0539483274"
+msgstr "0539483274"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "0541327080"
+msgstr "0541327080"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "05493828"
+msgstr "05493828"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__09:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__09:00
+msgid "09:00"
+msgstr "09:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__09:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__09:30
+msgid "09:30"
+msgstr "09:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__10:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__10:00
+msgid "10:00"
+msgstr "10:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__10:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__10:30
+msgid "10:30"
+msgstr "10:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__11:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__11:00
+msgid "11:00"
+msgstr "11:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__11:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__11:30
+msgid "11:30"
+msgstr "11:30"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "12345678"
+msgstr "12345678"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__12:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__12:00
+msgid "12:00"
+msgstr "12:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__12:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__12:30
+msgid "12:30"
+msgstr "12:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__13:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__13:00
+msgid "13:00"
+msgstr "13:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__13:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__13:30
+msgid "13:30"
+msgstr "13:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__14:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__14:00
+msgid "14:00"
+msgstr "14:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__14:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__14:30
+msgid "14:30"
+msgstr "14:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__15:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__15:00
+msgid "15:00"
+msgstr "15:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__15:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__15:30
+msgid "15:30"
+msgstr "15:30"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__16:00
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__16:00
+msgid "16:00"
+msgstr "16:00"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__appointment_hour__16:30
+#: model:ir.model.fields.selection,name:clinic_management.selection__create_followup__appointment_hour__16:30
+msgid "16:30"
+msgstr "16:30"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "3232242"
+msgstr "3232242"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Blood Group</strong>"
+msgstr "<strong>فصيلة الدم</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Date of Birth</strong>"
+msgstr "<strong>تاريخ الميلاد</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "<strong>Email</strong>"
+msgstr "<strong>البريد الإلكتروني</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>File No</strong><br/>"
+msgstr "<strong>رقم الملف</strong><br/>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>GENERAL INFO</strong>"
+msgstr "<strong>المعلومات العامة</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Gender</strong>"
+msgstr "<strong>الجنس</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Height</strong>"
+msgstr "<strong>الطول</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "<strong>License Number</strong>"
+msgstr "<strong>رقم الترخيص</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "<strong>MEDICAL EMPLOYEE INFO</strong>"
+msgstr "<strong>معلومات الموظف الطبي</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>MEDICAL INFO</strong>"
+msgstr "<strong>المعلومات الطبية</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Name</strong><br/>"
+msgstr "<strong>الاسم</strong><br/>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Phone</strong>"
+msgstr "<strong>الهاتف</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "<strong>Reference</strong><br/>"
+msgstr "<strong>المرجع</strong><br/>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "<strong>Specialization</strong>"
+msgstr "<strong>التخصص</strong>"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "<strong>Weight</strong>"
+msgstr "<strong>الوزن</strong>"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_patient__blood_type__ab+
+msgid "AB+"
+msgstr "AB+"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_patient__blood_type__ab-
+msgid "AB-"
+msgstr "AB-"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_needaction
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_needaction
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_needaction
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_exception_decoration
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_exception_decoration
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_exception_decoration
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تمييز استثناء النشاط"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_state
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_state
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_state
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_type_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_type_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_type_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__age
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Age"
+msgstr "العمر"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "Ahmed Ali"
+msgstr "أحمد علي"
+
+#. module: clinic_management
+#: model:ir.model,name:clinic_management.model_clinic_appointment
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__appointment_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__appointment_ids
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__appointment_id
+msgid "Appointment"
+msgstr "موعد"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__appointment_count
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__appointment_count
+msgid "Appointment Count"
+msgstr "عدد المواعيد"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__appointment_date
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__appointment_date
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Appointment Date"
+msgstr "تاريخ الموعد"
+
+#. module: clinic_management
+#: model:ir.actions.report,name:clinic_management.appointment_report_action
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Appointment Details"
+msgstr "تفاصيل الموعد"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__appointment_no
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Appointment Number"
+msgstr "رقم الموعد"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__appointment_id
+msgid "Appointment Reference"
+msgstr "مرجع الموعد"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Appointment Status"
+msgstr "حالة الموعد"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__appointment_hour
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__appointment_hour
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Appointment Time"
+msgstr "وقت الموعد"
+
+#. module: clinic_management
+#: model:ir.actions.act_window,name:clinic_management.action_clinic_appointment
+#: model:ir.ui.menu,name:clinic_management.clinic_appointment_menu
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Appointments"
+msgstr "المواعيد"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Appointments — Last 7 Days"
+msgstr "المواعيد — آخر 7 أيام"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_attachment_count
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_attachment_count
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_attachment_count
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__blood_type
+msgid "Blood Type"
+msgstr "فصيلة الدم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.create_follow_up_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: clinic_management
+#: model:ir.actions.server,name:clinic_management.server_action_clinic_appointment
+msgid "Cancel Appointment"
+msgstr "إلغاء الموعد"
+
+#. module: clinic_management
+#: model:ir.actions.server,name:clinic_management.server_action_clinic_visit
+msgid "Cancel Visit"
+msgstr "إلغاء الزيارة"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__state__cancelled
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_visit__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__child_ids
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__child_ids
+msgid "Child"
+msgstr "تابع"
+
+#. module: clinic_management
+#: model:ir.ui.menu,name:clinic_management.clinic_root_menu
+msgid "Clinic"
+msgstr "العيادة"
+
+#. module: clinic_management
+#: model:res.groups,name:clinic_management.clinic_accountant_group
+msgid "Clinic Accountant Group"
+msgstr "مجموعة محاسبي العيادة"
+
+#. module: clinic_management
+#: model:res.groups,name:clinic_management.clinic_admin_group
+msgid "Clinic Admin Group"
+msgstr "مجموعة مديري العيادة"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.actions.client,name:clinic_management.action_clinic_dashboard
+#: model:ir.model,name:clinic_management.model_clinic_dashboard
+#, python-format
+msgid "Clinic Dashboard"
+msgstr "لوحة تحكم العيادة"
+
+#. module: clinic_management
+#: model:res.groups,name:clinic_management.clinic_doctor_group
+msgid "Clinic Doctor Group"
+msgstr "مجموعة أطباء العيادة"
+
+#. module: clinic_management
+#: model:ir.module.category,name:clinic_management.clinic_management_category
+msgid "Clinic Management"
+msgstr "إدارة العيادة"
+
+#. module: clinic_management
+#: model:ir.actions.report,name:clinic_management.clinic_prescription_report_action
+msgid "Clinic Prescription Reprot Action"
+msgstr "تقرير الوصفة الطبية"
+
+#. module: clinic_management
+#: model:res.groups,name:clinic_management.clinic_receptionist_group
+msgid "Clinic Receptionist Group"
+msgstr "مجموعة موظفي الاستقبال"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__complaint
+msgid "Complaint"
+msgstr "الشكوى"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Completed Today"
+msgstr "المكتملة اليوم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.create_follow_up_wizard
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+msgid "Create Follow Up"
+msgstr "إنشاء متابعة"
+
+#. module: clinic_management
+#: model:ir.actions.act_window,name:clinic_management.action_create_follow_up_wizard
+msgid "Create Follow Up Wizard Action"
+msgstr "معالج إنشاء متابعة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__create_uid
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__create_date
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: clinic_management
+#: model:ir.ui.menu,name:clinic_management.clinic_dashboard_menu
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Date & Time"
+msgstr "التاريخ والوقت"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__date_of_birth
+msgid "Date Of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Date:"
+msgstr "التاريخ:"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "Dentist"
+msgstr "طبيب أسنان"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__diagnosis
+msgid "Diagnosis"
+msgstr "التشخيص"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__display_name
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.model,name:clinic_management.model_clinic_doctor
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__doctor_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__doctor_id
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+#, python-format
+msgid "Doctor"
+msgstr "الطبيب"
+
+#. module: clinic_management
+#: model:ir.actions.report,name:clinic_management.action_doctor_report
+#: model_terms:ir.ui.view,arch_db:clinic_management.doctor_report_template
+msgid "Doctor File"
+msgstr "ملف الطبيب"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.actions.act_window,name:clinic_management.action_clinic_doctor
+#: model:ir.ui.menu,name:clinic_management.clinic_doctor_menu
+#, python-format
+msgid "Doctors"
+msgstr "الأطباء"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__state__done
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_visit__state__done
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__dosage
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Dosage"
+msgstr "الجرعة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_kanban_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_kanban_view
+msgid "Dr,"
+msgstr "د."
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__state__draft
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_visit__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__duration
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Duration"
+msgstr "المدة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__emergency_contact
+msgid "Emergency Contact"
+msgstr "جهة اتصال للطوارئ"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__calendar_end
+msgid "End"
+msgstr "النهاية"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_patient__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "File No"
+msgstr "رقم الملف"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_kanban_view
+msgid "File No:"
+msgstr "رقم الملف:"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Follow Up"
+msgstr "متابعة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_follower_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_follower_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_follower_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_partner_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_partner_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_partner_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__activity_type_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__activity_type_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__activity_type_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__frequency
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Frequency"
+msgstr "التكرار"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__gender
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "General Info"
+msgstr "المعلومات العامة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_search_view
+msgid "Group By Doctor"
+msgstr "تجميع حسب الطبيب"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_search_view
+msgid "Group By Gender"
+msgstr "تجميع حسب الجنس"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_search_view
+msgid "Group By State"
+msgstr "تجميع حسب الحالة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_search_view
+msgid "Group by Specialization"
+msgstr "تجميع حسب التخصص"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__has_message
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__has_message
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__has_message
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__hight
+msgid "Hight"
+msgstr "الطول"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__id
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_exception_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_exception_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_exception_icon
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__activity_exception_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__activity_exception_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__activity_exception_icon
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__message_needaction
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__message_needaction
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__message_needaction
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__message_has_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__message_has_sms_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__message_has_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__message_has_sms_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__message_has_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__message_has_sms_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__message_has_error
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_visit__state__in_consultation
+#, python-format
+msgid "In Consultation"
+msgstr "قيد الاستشارة"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_appointment__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Instruction"
+msgstr "التعليمات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__instructions
+msgid "Instructions"
+msgstr "التعليمات"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "Insurance"
+msgstr "التأمين"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__insurance_no
+msgid "Insurance Number"
+msgstr "رقم التأمين"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__invoice_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__invoice_id
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_visit__state__invoiced
+msgid "Invoiced"
+msgstr "تمت الفوترة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__is_follow_up
+msgid "Is Follow Up"
+msgstr "متابعة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_is_follower
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_is_follower
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_is_follower
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__write_uid
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_dashboard__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__write_date
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__license_no
+msgid "License Number"
+msgstr "رقم الترخيص"
+
+#. module: clinic_management
+#: model:ir.model.constraint,message:clinic_management.constraint_clinic_doctor_unique_license_no
+msgid "Make sure to use a unique license number"
+msgstr "تأكد من استخدام رقم ترخيص فريد"
+
+#. module: clinic_management
+#: model:ir.model.fields.selection,name:clinic_management.selection__clinic_patient__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Mark as Done"
+msgstr "تحديد كمكتمل"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "Medical Employee Info"
+msgstr "معلومات الموظف الطبي"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "Medical Info"
+msgstr "المعلومات الطبية"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Medicine"
+msgstr "الدواء"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_has_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_has_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_has_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__my_activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__name
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "National ID"
+msgstr "رقم الهوية الوطنية"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__nid
+msgid "National Id"
+msgstr "رقم الهوية الوطنية"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_date_deadline
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_summary
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_summary
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_summary
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_type_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_type_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_type_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "No"
+msgstr "لا"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "No appointments scheduled for today."
+msgstr "لا توجد مواعيد مجدولة اليوم."
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "No patients yet."
+msgstr "لا يوجد مرضى حتى الآن."
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__notes
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_needaction_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_needaction_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_needaction_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_has_error_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_has_error_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_has_error_counter
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__message_needaction_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__message_needaction_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__message_needaction_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__message_has_error_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__message_has_error_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__message_has_error_counter
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي تحتوي على خطأ في التسليم"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__parent_id
+#: model:ir.model.fields,field_description:clinic_management.field_create_followup__parent_id
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__partner_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_search_view
+msgid "Past"
+msgstr "السابقة"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.model,name:clinic_management.model_clinic_patient
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__patient_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__patient_id
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+#, python-format
+msgid "Patient"
+msgstr "المريض"
+
+#. module: clinic_management
+#: model:ir.actions.report,name:clinic_management.action_patient_report
+#: model_terms:ir.ui.view,arch_db:clinic_management.patient_report_template
+msgid "Patient File"
+msgstr "ملف المريض"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Patient Name"
+msgstr "اسم المريض"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model:ir.actions.act_window,name:clinic_management.action_clinic_patient
+#: model:ir.ui.menu,name:clinic_management.clinic_patient_menu
+#, python-format
+msgid "Patients"
+msgstr "المرضى"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__phone
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__prescription_line_ids
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Prescription Line"
+msgstr "بنود الوصفة الطبية"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Prescription Report"
+msgstr "تقرير الوصفة الطبية"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Prescriptions"
+msgstr "الوصفات الطبية"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__quantity
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__quantity
+#: model_terms:ir.ui.view,arch_db:clinic_management.prescription_report_template
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__reason
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Reason"
+msgstr "السبب"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Recently Added Patients"
+msgstr "المرضى المضافون حديثًا"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__ref
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__ref
+msgid "Ref"
+msgstr "المرجع"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_kanban_view
+msgid "Ref:"
+msgstr "المرجع:"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Reset to Draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__activity_user_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__activity_user_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__activity_user_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__message_has_sms_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__message_has_sms_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__message_has_sms_error
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__product_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__service_line_ids
+msgid "Service"
+msgstr "الخدمة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__specialization
+msgid "Specialization"
+msgstr "التخصص"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__calendar_start
+msgid "Start"
+msgstr "البداية"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Start Consultation"
+msgstr "بدء الاستشارة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+msgid "Start Visit"
+msgstr "بدء الزيارة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__state
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Status"
+msgstr "الحالة"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__activity_state
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__activity_state
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__activity_state
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تم تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_form_view
+msgid "Sultan Ahemd"
+msgstr "سلطان أحمد"
+
+#. module: clinic_management
+#: model:ir.model.constraint,message:clinic_management.constraint_clinic_doctor_unique_name
+msgid "This name exist please use a different one"
+msgstr "هذا الاسم موجود بالفعل، يرجى استخدام اسم آخر"
+
+#. module: clinic_management
+#: model:ir.model.constraint,message:clinic_management.constraint_clinic_patient_unique_nid
+msgid "This patient id exist, please use different one"
+msgstr "رقم هوية المريض موجود بالفعل، يرجى استخدام رقم آخر"
+
+#. module: clinic_management
+#: model:ir.model.constraint,message:clinic_management.constraint_clinic_patient_unique_name
+msgid "This patient name exist, please use different one"
+msgstr "اسم المريض موجود بالفعل، يرجى استخدام اسم آخر"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Time"
+msgstr "الوقت"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_search_view
+msgid "Today"
+msgstr "اليوم"
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#, python-format
+msgid "Today's Appointments"
+msgstr "مواعيد اليوم"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__activity_exception_decoration
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__activity_exception_decoration
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__activity_exception_decoration
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: clinic_management
+#. odoo-javascript
+#: code:addons/clinic_management/static/src/dashboard/dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_search_view
+#, python-format
+msgid "Upcoming"
+msgstr "القادمة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: clinic_management
+#: model:ir.model,name:clinic_management.model_clinic_visit
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__visit_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_prescription_line__visit_id
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_service_line__visit_id
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_appointment_form_view
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__visit_date
+msgid "Visit Date"
+msgstr "تاريخ الزيارة"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_visit_form_view
+msgid "Visit Info"
+msgstr "معلومات الزيارة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__visit_no
+msgid "Visit Number"
+msgstr "رقم الزيارة"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__visit_hour
+msgid "Visit Time"
+msgstr "وقت الزيارة"
+
+#. module: clinic_management
+#: model:ir.actions.act_window,name:clinic_management.action_clinic_visit
+#: model:ir.ui.menu,name:clinic_management.clinic_visit_menu
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_appointment__website_message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_doctor__website_message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__website_message_ids
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_visit__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: clinic_management
+#: model:ir.model.fields,help:clinic_management.field_clinic_appointment__website_message_ids
+#: model:ir.model.fields,help:clinic_management.field_clinic_doctor__website_message_ids
+#: model:ir.model.fields,help:clinic_management.field_clinic_patient__website_message_ids
+#: model:ir.model.fields,help:clinic_management.field_clinic_visit__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع"
+
+#. module: clinic_management
+#: model:ir.model.fields,field_description:clinic_management.field_clinic_patient__weight
+msgid "Weight"
+msgstr "الوزن"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_patient_search_view
+msgid "Weight over 100kg"
+msgstr "وزن أكثر من 100 كجم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.appointment_report_template
+msgid "Yes"
+msgstr "نعم"
+
+#. module: clinic_management
+#: model_terms:ir.ui.view,arch_db:clinic_management.clinic_doctor_form_view
+msgid "ahmed@example.com"
+msgstr "ahmed@example.com"
+
+#. module: clinic_management
+#: model:ir.model,name:clinic_management.model_clinic_prescription_line
+msgid "clinic.prescription.line"
+msgstr "سطر وصفة طبية"
+
+#. module: clinic_management
+#: model:ir.model,name:clinic_management.model_clinic_service_line
+msgid "clinic.service.line"
+msgstr "سطر خدمة"
+
+#. module: clinic_management
+#: model:ir.model,name:clinic_management.model_create_followup
+msgid "create.followup"
+msgstr "إنشاء متابعة"
