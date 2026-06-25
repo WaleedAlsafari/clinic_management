@@ -147,8 +147,15 @@ class ClinicAppointment(models.Model):
     @api.model
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
-
-
+    def open_related_visit_button(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Visit',
+            'res_model': 'clinic.visit',
+            'view_mode': 'form',
+            'res_id': self.visit_id.id,
+            'target': 'current'   
+        }   
 
     
 
