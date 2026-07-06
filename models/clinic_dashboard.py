@@ -47,8 +47,8 @@ class ClinicDashboard(models.Model):
     def _get_appointment_state_breakdown(self):
         Appointment = self.env['clinic.appointment']
         states = [key for key, _ in Appointment._fields['state'].selection]
-        groups = Appointment.read_group([], ['state'], ['state'])
-        counts = {g['state']: g['state_count'] for g in groups}
+        groups = Appointment.formatted_read_group([], groupby=['state'], aggregates=['__count'])
+        counts = {g['state']: g['__count'] for g in groups}
         labels = dict(Appointment._fields['state'].selection)
         return [
             {'state': s, 'label': labels[s], 'count': counts.get(s, 0)}

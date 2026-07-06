@@ -3,8 +3,9 @@ from odoo import models, fields
 
 class CreateFollowUp(models.TransientModel):
     _name='create.followup'
+    _description = 'Create Follow Up Wizard'
 
-    appointment_id = fields.Many2one('clinic.appointment', readonly=1)
+    appointment_id = fields.Many2one('clinic.appointment', readonly=True)
     appointment_date = fields.Date()
     appointment_hour = fields.Selection([
     ('09:00', '09:00'),
@@ -23,7 +24,7 @@ class CreateFollowUp(models.TransientModel):
     ('15:30', '15:30'),
     ('16:00', '16:00'),
     ('16:30', '16:30'),
-], string='Appointment Time', required=1)
+], string='Appointment Time', required=True)
     
     parent_id = fields.Many2one('clinic.appointment')
     child_ids = fields.One2many('clinic.appointment', 'parent_id')

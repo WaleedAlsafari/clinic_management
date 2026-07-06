@@ -9,10 +9,10 @@ class ClinicPatient(models.Model):
 
     ref = fields.Char(default='New', readonly=True)
     partner_id = fields.Many2one('res.partner')
-    name = fields.Char(related = 'partner_id.name', string='Name', store=True, requried=True, readonly=False)
-    phone = fields.Char(related = 'partner_id.phone', string='Phone', store=True, requried=True, readonly=False, size=10)
-    nid = fields.Char(requried=True, string='National Id', size=10)
-    age = fields.Integer(requried=True)
+    name = fields.Char(related = 'partner_id.name', string='Name', store=True, required=True, readonly=False)
+    phone = fields.Char(related = 'partner_id.phone', string='Phone', store=True, required=True, readonly=False, size=10)
+    nid = fields.Char(required=True, string='National Id', size=10)
+    age = fields.Integer(required=True)
     weight = fields.Float()
     hight = fields.Float()
     date_of_birth = fields.Date(required=True)
@@ -37,10 +37,8 @@ class ClinicPatient(models.Model):
         compute='_compute_appointment_ids'
     )
 
-    _sql_constraints = [
-        ('unique_name','unique(name)','This patient name exist, please use different one'),
-        ('unique_nid','unique(nid)','This patient id exist, please use different one'),
-    ]
+    _unique_name = models.Constraint('unique(name)', 'This patient name exist, please use different one')
+    _unique_nid = models.Constraint('unique(nid)', 'This patient id exist, please use different one')
 
 
     @api.model_create_multi
@@ -63,7 +61,7 @@ class ClinicPatient(models.Model):
         'type': 'ir.actions.act_window',
         'name': 'Appointments',
         'res_model': 'clinic.appointment',
-        'view_mode': 'tree',
+        'view_mode': 'list',
         'domain' : [('id','in', self.appointment_ids.ids)],
         'target': 'current',
         'context' : {

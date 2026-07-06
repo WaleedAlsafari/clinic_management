@@ -11,10 +11,10 @@ class ClinicAppointment(models.Model):
     _rec_name = 'appointment_no'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    appointment_no = fields.Char(default="New", readonly=1, string='Appointment Number')
-    patient_id = fields.Many2one('clinic.patient', required=1)
-    doctor_id = fields.Many2one('clinic.doctor', required=1)
-    appointment_date = fields.Date(required=1)
+    appointment_no = fields.Char(default="New", readonly=True, string='Appointment Number')
+    patient_id = fields.Many2one('clinic.patient', required=True)
+    doctor_id = fields.Many2one('clinic.doctor', required=True)
+    appointment_date = fields.Date(required=True)
     appointment_hour = fields.Selection([
     ('09:00', '09:00'),
     ('09:30', '09:30'),
@@ -32,9 +32,9 @@ class ClinicAppointment(models.Model):
     ('15:30', '15:30'),
     ('16:00', '16:00'),
     ('16:30', '16:30'),
-], string='Appointment Time', required=1)
-    calendar_start = fields.Datetime(compute='compute_calendar', string="Start", store=1)
-    calendar_end = fields.Datetime(compute='compute_calendar', string="End", store=1)
+], string='Appointment Time', required=True)
+    calendar_start = fields.Datetime(compute='compute_calendar', string="Start", store=True)
+    calendar_end = fields.Datetime(compute='compute_calendar', string="End", store=True)
     reason = fields.Text()
     state = fields.Selection([
         ('draft','Draft'),
@@ -48,7 +48,7 @@ class ClinicAppointment(models.Model):
     notes = fields.Text()
     visit_id = fields.Many2one('clinic.visit')
     invoice_id = fields.Many2one('account.move')
-    is_follow_up = fields.Boolean(default=False, readonly=1)
+    is_follow_up = fields.Boolean(default=False, readonly=True)
     parent_id = fields.Many2one('clinic.appointment')
     child_ids = fields.One2many('clinic.appointment', 'parent_id')
     
@@ -145,7 +145,7 @@ class ClinicAppointment(models.Model):
                 rec.calendar_end = utc_dt + timedelta(minutes=30)
     
     @api.model
-    def _expand_states(self, states, domain, order):
+    def _expand_states(self, states, domain):
         return [key for key, val in type(self).state.selection]
     def open_related_visit_button(self):
         return {

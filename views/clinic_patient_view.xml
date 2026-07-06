@@ -5,13 +5,13 @@
         <field name='name'>Patient List View</field>
         <field name='model'>clinic.patient</field>
         <field name='arch' type='xml'>
-            <tree>
+            <list>
                 <field name='ref' />
                 <field name='name' />
                 <field name='date_of_birth' />
                 <field name='gender' />
 
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -79,11 +79,7 @@
                         </group>
                     </group>
                 </sheet>
-                <div class='oe_chatter'>
-                    <field name='message_follower_ids' />
-                    <field name='activity_ids' />
-                    <field name='message_ids' />
-                </div>
+                <chatter/>
             </form>
 
         </field>
@@ -101,7 +97,7 @@
                 <field name="ref" />
 
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
 
                         <div class="oe_kanban_global_click">
 
@@ -130,7 +126,7 @@
     <record id='action_clinic_patient' model='ir.actions.act_window'>
         <field name='name'>Patients</field>
         <field name='res_model'>clinic.patient</field>
-        <field name='view_mode'>kanban,tree,form</field>
+        <field name='view_mode'>kanban,list,form</field>
     </record>
 
     <menuitem

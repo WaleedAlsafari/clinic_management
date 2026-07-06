@@ -4,12 +4,12 @@
         <field name='name'>Visit List View</field>
         <field name='model'>clinic.visit</field>
         <field name='arch' type='xml'>
-            <tree>
+            <list>
                 <field name='visit_no' />
                 <field name='patient_id' />
                 <field name='doctor_id' />
                 <field name='state' />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -58,7 +58,7 @@
                         string='Create Invoice'
                         class='btn-primary'
                         invisible='state != "done"'
-                        groups='clinic_management.clinic_admin_group, clinic_management.clinic_receptionist_group, clinic_management.clinic_accountant_group'
+                        groups='clinic_management.clinic_admin_group,clinic_management.clinic_receptionist_group,clinic_management.clinic_accountant_group'
                     />
                     <field name='state' widget='statusbar' />
                 </header>
@@ -102,31 +102,27 @@
                     <notebook>
                         <page string='Prescriptions'>
                             <field name='prescription_line_ids'>
-                                <tree editable='True'>
+                                <list editable='bottom'>
                                     <field name='product_id' domain="[('categ_id', '=', 4)]"/>
                                     <field name='quantity' />
                                     <field name='dosage' />
                                     <field name='frequency' />
                                     <field name='duration' />
                                     <field name='instructions' />
-                                </tree>
+                                </list>
                             </field>
                         </page>
                         <page string='Services'>
                             <field name='service_line_ids'>
-                                <tree editable='True'>
+                                <list editable='bottom'>
                                     <field name='product_id' domain="[('categ_id','=', 5)]"/>
                                     <field name='quantity'/>
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
-                <div class='oe_chatter'>
-                    <field name='message_follower_ids' />
-                    <field name='activity_ids' />
-                    <field name='message_ids' />
-                </div>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -150,7 +146,7 @@
                 <field name="visit_hour" />
 
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
 
                         <div class="oe_kanban_global_click o_kanban_record">
 
@@ -199,7 +195,7 @@
     <record id='action_clinic_visit' model='ir.actions.act_window'>
         <field name='name'>Visits</field>
         <field name='res_model'>clinic.visit</field>
-        <field name='view_mode'>tree,kanban,form</field>
+        <field name='view_mode'>list,kanban,form</field>
     </record>
 
     <menuitem

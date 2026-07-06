@@ -4,14 +4,14 @@
         <field name='name'>Appointment List View</field>
         <field name='model'>clinic.appointment</field>
         <field name='arch' type='xml'>
-            <tree>
+            <list>
                 <field name='appointment_no' />
                 <field name='patient_id' />
                 <field name='doctor_id' />
                 <field name='appointment_date' />
                 <field name='appointment_hour' />
                 <field name='state' />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -133,11 +133,7 @@
                         </group>
                     </group>
                 </sheet>
-                <div class='oe_chatter'>
-                    <field name='message_follower_ids' />
-                    <field name='activity_ids' />
-                    <field name='message_ids' />
-                </div>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -178,7 +174,7 @@
                 <field name="appointment_hour" />
 
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
 
                         <div class="oe_kanban_global_click o_kanban_record">
 
@@ -228,7 +224,7 @@
     <record id='action_clinic_appointment' model='ir.actions.act_window'>
         <field name='name'>Appointments</field>
         <field name='res_model'>clinic.appointment</field>
-        <field name='view_mode'>tree,calendar,kanban,form</field>
+        <field name='view_mode'>list,calendar,kanban,form</field>
     </record>
 
     <menuitem

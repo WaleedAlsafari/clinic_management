@@ -8,13 +8,13 @@ class ClinicDoctor(models.Model):
     
 
     ref = fields.Char(default='New', readonly=True)
-    name = fields.Char(related='partner_id.name', store=True, readonly=False, requried=1)
-    phone = fields.Char(related='partner_id.phone', store=True, readonly=False, requried=1)
+    name = fields.Char(related='partner_id.name', store=True, readonly=False, required=True)
+    phone = fields.Char(related='partner_id.phone', store=True, readonly=False, required=True)
     email = fields.Char(related='partner_id.email', store=True, readonly=False,)
     partner_id = fields.Many2one('res.partner')
-    user_id = fields.Many2one('res.user')
-    specialization = fields.Char(requried=1)
-    license_no = fields.Char(string='License Number', requried=1)
+    user_id = fields.Many2one('res.users')
+    specialization = fields.Char(required=True)
+    license_no = fields.Char(string='License Number', required=True)
     active = fields.Boolean(default=True)
     appointment_ids = fields.One2many('clinic.appointment', 'doctor_id')
     appointment_count = fields.Integer(
@@ -22,10 +22,8 @@ class ClinicDoctor(models.Model):
     )
 
 
-    _sql_constraints = [
-        ('unique_name', 'unique(name)', 'This name exist please use a different one'),
-        ('unique_license_no', 'unique(license_no)', 'Make sure to use a unique license number')
-    ]
+    _unique_name = models.Constraint('unique(name)', 'This name exist please use a different one')
+    _unique_license_no = models.Constraint('unique(license_no)', 'Make sure to use a unique license number')
     @api.model_create_multi
     def create(self,vals):
         rec = super(ClinicDoctor,self).create(vals)
@@ -36,7 +34,7 @@ class ClinicDoctor(models.Model):
     'email': rec.email,
     'password': 'Temp123@',
     'partner_id': partner.id,
-    'groups_id': [(6, 0, [
+    'group_ids': [(6, 0, [
         self.env.ref('base.group_user').id,
         self.env.ref('clinic_management.clinic_doctor_group').id
     ])],
@@ -54,7 +52,7 @@ class ClinicDoctor(models.Model):
         'type': 'ir.actions.act_window',
         'name': 'Appointments',
         'res_model': 'clinic.appointment',
-        'view_mode': 'tree',
+        'view_mode': 'list',
         'domain' : [('id','in', self.appointment_ids.ids)],
         'target': 'current',
         'context' : {

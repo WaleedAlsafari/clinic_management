@@ -8,12 +8,12 @@ class ClinicVisit(models.Model):
     _rec_name = 'visit_no'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    visit_no = fields.Char(default='New',readonly=1, string='Visit Number')
-    appointment_id = fields.Many2one('clinic.appointment', string='Appointment Reference', readonly=1)
-    visit_date = fields.Date(related='appointment_id.appointment_date', string='Visit Date', store=1)
-    visit_hour = fields.Selection(related='appointment_id.appointment_hour', string='Visit Time', store=1, readonly=0)
-    patient_id = fields.Many2one(related='appointment_id.patient_id', store=1, readonly=1)
-    doctor_id = fields.Many2one(related='appointment_id.doctor_id', store=1, readonly=1)
+    visit_no = fields.Char(default='New',readonly=True, string='Visit Number')
+    appointment_id = fields.Many2one('clinic.appointment', string='Appointment Reference', readonly=True)
+    visit_date = fields.Date(related='appointment_id.appointment_date', string='Visit Date', store=True)
+    visit_hour = fields.Selection(related='appointment_id.appointment_hour', string='Visit Time', store=True, readonly=False)
+    patient_id = fields.Many2one(related='appointment_id.patient_id', store=True, readonly=True)
+    doctor_id = fields.Many2one(related='appointment_id.doctor_id', store=True, readonly=True)
     complaint = fields.Text()
     diagnosis = fields.Text()
     note = fields.Text()
@@ -26,7 +26,7 @@ class ClinicVisit(models.Model):
     ],group_expand='_expand_states')
     prescription_line_ids = fields.One2many('clinic.prescription.line', 'visit_id')
     invoice_id = fields.Many2one('account.move')
-    service_line_ids = fields.One2many(comodel_name='clinic.service.line', string='Service', inverse_name='visit_id', required=1)
+    service_line_ids = fields.One2many(comodel_name='clinic.service.line', string='Service', inverse_name='visit_id', required=True)
 
     def mark_as_draft(self):
         for rec in self:
@@ -88,7 +88,7 @@ class ClinicVisit(models.Model):
 
 
 
-    @api._model_create_multi
+    @api.model_create_multi
     def create(self,vals):
         rec = super(ClinicVisit,self).create(vals)
         rec.mark_as_draft()
@@ -108,7 +108,7 @@ class ClinicVisit(models.Model):
                 raise ValidationError("Error: at least one service must be selected")
             
     @api.model
-    def _expand_states(self, states, domain, order):
+    def _expand_states(self, states, domain):
         return [key for key, val in type(self).state.selection]
     
     def open_related_appointment_button(self):
@@ -127,10 +127,11 @@ class ClinicVisit(models.Model):
 
 class ClinicPrescriptionLine(models.Model):
     _name='clinic.prescription.line'
+    _description = 'Prescription Line'
 
     visit_id = fields.Many2one('clinic.visit')
     product_id = fields.Many2one('product.product')
-    quantity  = fields.Integer(required=1, default=1)
+    quantity  = fields.Integer(required=True, default=1)
     dosage = fields.Char()
     frequency = fields.Char()
     duration = fields.Char()
@@ -138,10 +139,11 @@ class ClinicPrescriptionLine(models.Model):
 
 class ClinicServiceLine(models.Model):
     _name='clinic.service.line'
+    _description = 'Service Line'
 
     visit_id = fields.Many2one('clinic.visit')
     product_id = fields.Many2one('product.product', string='Service')
-    quantity = fields.Integer(required=1, default=1)
+    quantity = fields.Integer(required=True, default=1)
     
     
 

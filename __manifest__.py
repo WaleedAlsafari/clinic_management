@@ -10,6 +10,7 @@
         'product'
     ],
     "author" : "Waleed Alsafari",
+    "license" : "LGPL-3",
     "category" : 'Category',
     "description" : """
     This is a clinic management app for small to mid-sized clinic
