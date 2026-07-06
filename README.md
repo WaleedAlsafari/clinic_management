@@ -1,6 +1,6 @@
-# 🏥 Clinic Management System (Odoo 17)
+# 🏥 Clinic Management System (Odoo 19)
 
-A custom-built Clinic Management System developed using **Odoo 17**, designed to manage core healthcare workflows including patients, doctors, appointments, visits, prescriptions, billing, reporting, and integrations with Accounting and Inventory modules.
+A custom-built Clinic Management System developed using **Odoo 19**, designed to manage core healthcare workflows including patients, doctors, appointments, visits, prescriptions, billing, reporting, and integrations with Accounting and Inventory modules.
 
 ---
 
@@ -66,7 +66,7 @@ Patient → Appointment → Visit → Prescription → Invoice → Payment
 
 ## 🧱 Technical Architecture
 
-* **Framework:** Odoo 17
+* **Framework:** Odoo 19
 * **Language:** Python
 * **Database:** PostgreSQL
 * **UI:** XML Views (Form, Tree, Kanban)
